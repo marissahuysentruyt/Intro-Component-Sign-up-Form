@@ -66,7 +66,7 @@ body {
 }
 
 .cta-form form {
-    border: 1px solid black;
+    /* border: 1px solid black; */
     /* height: auto; */
     background-color: #fff;
     display: flex;
@@ -80,21 +80,55 @@ body {
 }
 .cta-form form label {
     width: 100%;
+    /* border: 1px solid red; */
 }
 
 .cta-form form label input {
     height: 2em;
     border-radius: 6px;
-    margin-bottom: 2em;
+    margin-bottom: 1em;
     border: 1px solid hsl(246, 25%, 77%);
     padding: 1.5em;
     width: 100%;
+
+    /* trigger with validation script */
+    /* border: 1px solid hsl(0, 100%, 74%);
+    color:hsl(0, 100%, 74%); */
+    
 }
 
 .cta-form form input:focus {
     border: 1px solid hsl(248, 32%, 49%);
     caret-color: hsl(248, 32%, 49%);
     outline: transparent;
+}
+
+.cta-form form label img.error {
+    /* border: 1px solid red; */
+    float: right;
+    position: relative;
+    bottom: 46px;
+    right: 26px;
+    visibility: hidden;
+
+    /* trigger with validation script */
+    /* visibility: visible; */
+}
+
+.cta-form form label span {
+    color:hsl(0, 100%, 74%);
+    margin: 0;
+    float: right;
+    position: relative;
+    bottom: 12px;
+    left: 22px;
+    font-style: italic;
+    font-size: 0.75em;
+    visibility: hidden;
+
+    /* trigger with validation script */
+    /* visibility: visible; */
+
 }
 
 button {
