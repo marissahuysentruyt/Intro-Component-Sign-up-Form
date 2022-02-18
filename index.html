@@ -34,27 +34,30 @@
       <!-- action is where the information is getting sent to, so where would this go? script.js? -->
       <form action="#" method="post">
         <label for="firstname">
-          <input type="text"  placeholder="First Name">
+          <input type="text"  placeholder="First Name" class="input-firstname">
+          <span>First Name cannot be empty</span>
         </label>
         <label for="lastname">
-          <input type="text"  placeholder="Last Name">
+          <input type="text"  placeholder="Last Name" class="input-lastname">
+          <span>Last Name cannot be empty</span>
         </label>
         <label for="email">
-          <input type="email"  placeholder="Email Address">
+          <input type="email"  placeholder="Email Address" class="input-email">
+          <span>Looks like this is not an email</span>
         </label>
         <label for="Password">
-          <input type="password"  placeholder="Password">
+          <input type="password"  placeholder="Password" class="input-password">
+          <span>Password cannot be empty</span>
         </label>
 
         <button type="submit">Claim Your Free Trial</button>
 
-      </form>
-
-      <!-- tiny terms & conditions text -->
+        <!-- tiny terms & conditions text -->
       <div class="terms">
-        By clicking the button, you are agreeing to our <span>Terms and Services</span>
+        By clicking the button, you are agreeing to our <span class="span-terms"><a href="#">Terms and Services</a></span>
       </div>
 
+      </form>
     </section>
 
   </main>

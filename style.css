@@ -17,13 +17,16 @@ body {
 .body-container {
     display: flex;
     flex-direction: row;
-
+    /* border: 1px solid black; */
 }
 
 .body-container .hero {
     /* border: 1px solid red; */
     color: white;
     padding: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .body-container .hero h1 {
@@ -41,7 +44,7 @@ body {
     /* border: 1px solid red; */
     color: white;
     font-weight: 400;
-    padding: 0 2em;
+    padding: 0;
     height: auto;
     width: 100%;
 }
@@ -69,24 +72,76 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 2em 0;
+    padding: 3em;
     flex-basis: 100%;
+    border-radius: 12px;
+    box-shadow: 0 8px 1px 0px rgba(0, 0, 0, 0.16);
+
+}
+.cta-form form label {
+    width: 100%;
 }
 
-.cta-form form input {
-    border: 1px solid black;
-    width: 100%;
+.cta-form form label input {
     height: 2em;
     border-radius: 6px;
-    padding: 5%;
-    margin-bottom: 1em;
+    margin-bottom: 2em;
     border: 1px solid hsl(246, 25%, 77%);
+    padding: 1.5em;
+    width: 100%;
 }
 
 .cta-form form input:focus {
     border: 1px solid hsl(248, 32%, 49%);
     caret-color: hsl(248, 32%, 49%);
     outline: transparent;
+}
+
+button {
+    background-color: hsl(154, 59%, 51%);
+    width: 100%;
+    padding: 1.5em;
+    height: 2em;
+    border-radius: 6px;
+    border: 1px solid hsl(153, 49%, 47%);
+    margin-bottom: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    color: #fff;
+    /* border: transparent; */
+    box-shadow: 0 -2px 0px 0px inset hsl(153, 49%, 47%);
+    transition: all ease-in-out 200ms;
+}
+
+button:hover {
+    background-color: rgba(56, 204, 140, 0.6);
+    border: 1px solid rgba(56, 204, 140, 0.8);
+    box-shadow: 0 -2px 0px 0px inset rgba(56, 204, 140, 0.7);;
+}
+
+.terms {
+    /* border: 1px solid red; */
+    color: hsl(246, 25%, 77%);
+    font-size: 0.75em;
+}
+
+.terms a {
+    text-decoration: none;
+    color: hsl(0, 100%, 74%);
+    transition: all ease-in-out 200ms;
+}
+
+.terms a:hover {
+    color: hsl(248, 32%, 49%);
+}
+
+/* how can fix the footer to the bottom of the viewport? */
+footer {
+    border: 1px solid black;
+    position: relative;
+    top: 100px;
 }
 
 .attribution,
