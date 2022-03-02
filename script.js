@@ -3,43 +3,71 @@
 // the form needs to check the validation and inputs when the button is clicked
 // if there is invalid DataTransfer, change visibility of span and error icon, border width
 
-// create variables to target each Input, the form itself, submit button
-const form = document.querySelector("form")[0];
-const firstName = document.querySelector(".input-firstname").value;
-const lastName = document.querySelector(".input-lastname").value;
-const email = document.querySelector(".input-email").value;
-const password = document.querySelector(".input-password").value;
-let button = document.querySelector("button");
-let errorIcon = Array.from(document.querySelectorAll("img"));
-let span = Array.from(document.querySelectorAll(".error-spans"));
-let inputs = Array.from(document.getElementsByTagName("input"));
+// create variables to target the form itself, each input field, submit button, the error icons and error messages, as well as an array of the inputs to loop through
+let form = document.querySelector("form")[0];
+let firstName = document.querySelector(".input-firstname").value;
+let lastName = document.querySelector(".input-lastname").value;
+let email = document.querySelector(".input-email").value;
+let password = document.querySelector(".input-password").value;
+const button = document.querySelector("button");
+const errorIcon = Array.from(document.querySelectorAll("img"));
+const span = Array.from(document.querySelectorAll(".error-spans"));
+const inputs = Array.from(document.getElementsByTagName("input"));
 
 // This is copied from the MDN documentation (have no idea what it does)
 // As per the HTML5 Specification
-const emailRegExp = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+// const emailRegExp = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
-"use strict";
 
+// validateInput should loop through each input FileSystemDirectoryReader, checking to make sure the value of the input isn't an empty string. 
+validateInput = () => {
+    for(i = 0; i < inputs.length; i++) {
+        //feel like I should be able to do all of this with a forEach loop, checking if the index from inputs, errorIcon and span all match, then display the errorIcon and span with the same index number
+
+        //could this be a situation for switch/case syntax?
+        if(firstName.length === 0) {
+            errorIcon[0].style.visibility = "visible";
+            span[0].style.visibility = "visible";
+            inputs[0].style.border = "2px solid hsl(0, 100%, 74%)";
+            inputs[0].style.color = "hsl(0, 100%, 74%)";
+        } else {
+            console.log("first name saved")
+        }
+        if(lastName.length === 0) {
+            errorIcon[1].style.visibility = "visible";
+            span[1].style.visibility = "visible";
+            inputs[1].style.border = "2px solid hsl(0, 100%, 74%)";
+            inputs[1].style.color = "hsl(0, 100%, 74%)";
+        } else {
+            console.log("last name saved")
+        }
+        if(email.length === 0) {
+            errorIcon[2].style.visibility = "visible";
+            span[2].style.visibility = "visible";
+            inputs[2].style.border = "2px solid hsl(0, 100%, 74%)";
+            inputs[2].style.color = "hsl(0, 100%, 74%)";
+        } else {
+            console.log("email saved")
+        }
+        if(password.length === 0) {
+            errorIcon[3].style.visibility = "visible";
+            span[3].style.visibility = "visible";
+            inputs[3].style.border = "2px solid hsl(0, 100%, 74%)";
+            inputs[3].style.color = "hsl(0, 100%, 74%)";
+        } else {
+            console.log("password saved")
+        }
+        }
+
+        console.log("validated information")
+
+    };
+
+// once submitted, run validateInput
 button.addEventListener("click", function(event) {
-    console.log("clicked");
-    // console.log(firstName.value, lastName.value, email.value, password.value);
+    validateInput();
+}) 
 
-        inputs.forEach(input => {
-            if(input[1].value.length === 0) {
-                // inputs[0].setAttribute("number", 1);
-                inputs[1].style.border = "2px solid hsl(0, 100%, 74%);";
-                inputs[1].style.color = "2px solid hsl(0, 100%, 74%);";
-
-                // errorIcon.setAttribute("number", "1");
-                errorIcon[1].style.visibility = "visible";
-
-                // span.setAttribute("number", "1");
-                span[1].style.visibility = "visible";
-            };
-
-            //as long as the index of the input is the same as the errorIcon & span, visibility should be visible
-        });
-    });
     
 
 // alert("Some inputs are invalid")
