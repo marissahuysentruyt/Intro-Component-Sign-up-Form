@@ -27,6 +27,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    flex-basis: 50%;
 }
 
 .body-container .hero h1 {
@@ -46,7 +47,9 @@ body {
     font-weight: 400;
     padding: 0;
     height: auto;
-    width: 100%;
+    /* width: 100%; */
+    flex-basis: 50%;
+
 }
 
 .cta-form .cta {
@@ -181,9 +184,9 @@ button:hover {
     color: hsl(248, 32%, 49%);
 }
 
-/* how can fix the footer to the bottom of the viewport? */
+/* footer */
 footer {
-    border: 1px solid black;
+    /* border: 1px solid black; */
     position: relative;
     top: 100px;
 }
@@ -202,5 +205,52 @@ footer {
 
 .attribution a:hover {
     color: hsl(228, 45%, 44%); 
+
+}
+
+/*tablet*/
+@media only screen and (max-width: 768px) {
+    .body-container {
+        flex-direction: column;
+        /* border: 1px solid black; */
+    }
+    .body-container .hero {
+        /* border: 1px solid red; */
+        text-align: center;
+    }
+    .body-container .hero h1 {
+        font-size: 2em;
+    }
+    .terms {
+        /* border: 1px solid red; */
+        text-align: center;
+    }
+
+}
+
+/*break point for padding around content & form fields*/
+@media only screen and (max-width: 482px) {
+    body {
+        padding: 5%;
+    }
+    .cta-form form {
+        /* border: 1px solid black; */
+        padding: 3em 1.5em;
+    }
+}
+
+/*phone*/
+@media only screen and (max-width: 375px) {
+    .body-container {
+        margin: 3em 0 0 0;
+    }
+    .body-container .hero {
+        padding: 0 0 3em 0;
+        /* border: 1px solid black; */
+    }
+    .body-container .hero h1 {
+        font-size: 1.5em;
+    }
+    
 
 }
