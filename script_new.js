@@ -13,21 +13,25 @@ inputs = Array.from(inputs)
 //     item.classList.add("input");
 // })
 
-// //validate and check for empty inputs
-// const checkInputs = () => {
-//     //for each input in the array...
-//    for(input in inputs) {
-//        //if the input's value is blank
-//     if(input.value === "") {
-//         //change the styles
-//         inputs.indexOf(input).style.border = "2px solid hsl(0, 100%, 74%)";
-//         inputs.indexOf(input).style.color = "hsl(0, 100%, 74%)";
-//     } else {
-//         console.log("input looks fine")
-//     }
-//    }
-//    return input;
-// }
+//validate and check for empty inputs
+const checkInputs = () => {
+    //for each input in the array...
+   inputs.forEach(input => {
+    //if the item's value is blank
+    if(input.value === "") {
+        //change the styles
+        input.style.border = "2px solid hsl(0, 100%, 74%)";
+        input.style.color = "hsl(0, 100%, 74%)";
+    } else {
+        //if it's not empty, the normal styles stay. 
+        console.log("input looks fine")
+        input.style.border = "1px solid hsl(246, 25%, 77%)";
+        input.style.color = "hsl(248, 32%, 49%)";
+    }
+    })
+};
+
+   
 
 // // checkInputs();
 
