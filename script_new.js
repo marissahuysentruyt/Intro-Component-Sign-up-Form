@@ -38,6 +38,8 @@ displayErrorSpans = () => {
             errorSpan.innerText = "Don't leave this empty!"
             
             inputs[i].insertAdjacentElement('afterEnd', errorSpan);
+            inputs[i].style.color = "hsl(0, 100%, 74%)";
+            inputs[i].style.border = "2px solid hsl(0, 100%, 74%)";
             console.log(`something's missing at ${inputs[i]}`)
         }
     }
