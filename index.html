@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <script src="script.js" defer></script>
+  <!-- <script src="script.js" defer></script> -->
+  <script src="script_new.js" defer></script>
   
   <title>Frontend Mentor | Intro component with sign up form</title>
 
@@ -17,7 +18,7 @@
     <!-- flexbox with h1 & p -->
     <section class="hero">
       <h1>
-        Learn to code by watching others
+        Learn to code by watching others changed
       </h1>
 
       <p>
@@ -34,24 +35,25 @@
       <!-- action is where the information is getting sent to, so where would this go? script.js? -->
       <form action="#" method="post">
         <label for="firstname">
-          <input type="text"  placeholder="First Name"  class="input-firstname">
-          <img src="images/icon-error.svg" class="error" alt="Error!">
-          <span class="error-spans">First Name cannot be empty</span>
+          <!-- min length vs max length required?-->
+          <input type="text"  placeholder="First Name" id="input-firstname">
+          <!-- <img src="images/icon-error.svg" alt="Error!" id="first-img"> -->
+          <!-- <span id="first-span">First Name cannot be empty</span> -->
         </label>
         <label for="lastname">
-          <input type="text"  placeholder="Last Name" class="input-lastname">
-          <img src="images/icon-error.svg" class="error" alt="Error!">
-          <span class="error-spans">Last Name cannot be empty</span>
+          <input type="text"  placeholder="Last Name" id="input-lastname">
+          <!-- <img src="images/icon-error.svg" alt="Error!" id="second-img"> -->
+          <!-- <span id="second-span">Last Name cannot be empty</span> -->
         </label>
         <label for="email">
-          <input type="email" placeholder="Email Address" class="input-email">
-          <img src="images/icon-error.svg" class="error" alt="Error!">
-          <span class="error-spans">Looks like this is not an email</span>
+          <input type="email" placeholder="Email Address" id="input-email">
+          <!-- <img src="images/icon-error.svg" alt="Error!" id="third-img"> -->
+          <!-- <span id="third-span">Looks like this is not an email</span> -->
         </label>
         <label for="Password">
-          <input type="password"  placeholder="Password" class="input-password">
-          <img src="images/icon-error.svg" class="error" alt="Error!">
-          <span class="error-spans">Password cannot be empty</span>
+          <input type="password"  placeholder="Password" id="input-password">
+          <!-- <img src="images/icon-error.svg" alt="Error!" id="fourth-img"> -->
+          <!-- <span id="fourth-span">Password cannot be empty</span> -->
         </label>
 
         <button type="button">Claim Your Free Trial</button>
