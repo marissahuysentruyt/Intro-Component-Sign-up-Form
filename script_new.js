@@ -4,72 +4,65 @@
 // if there is invalid DataTransfer, change visibility of span and error icon, border width
 
 //gather all the inputs and store as an array
-let inputs = document.querySelectorAll("input");
-//change from a NodeList to an array
-inputs = Array.from(inputs)
+// let firstName = document.getElementById("input-firstname")
+// let lastName = document.getElementById("input-lastname")
+// let email = document.getElementById("input-email")
+// let password = document.getElementById("input-password")
 
-//add class input, to each item in the inputs array
-// inputs.forEach((item) => {
-//     item.classList.add("input");
-// })
+let inputs = Array.from(document.querySelectorAll("input"))
 
-//validate and check for empty inputs
-const checkInputs = () => {
-    //for each input in the array...
-   inputs.forEach(input => {
-    //if the item's value is blank
-    if(input.value === "") {
-        //change the styles
-        input.style.border = "2px solid hsl(0, 100%, 74%)";
-        input.style.color = "hsl(0, 100%, 74%)";
-    } else {
-        //if it's not empty, the normal styles stay. 
-        console.log("input looks fine")
-        input.style.border = "1px solid hsl(246, 25%, 77%)";
-        input.style.color = "hsl(248, 32%, 49%)";
+// This is copied from the MDN documentation
+// As per the HTML5 Specification
+const emailRegExp = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
+displayErrorIcons = () => {
+    for(i = 0; i < inputs.length; i++) {
+        if (inputs[i].value === "") {
+            let errorIcon = document.createElement("img");
+            errorIcon.setAttribute("src", "images/icon-error.svg");
+            errorIcon.setAttribute("alt", "Error!");
+            errorIcon.setAttribute("class", "error")
+            
+            inputs[i].insertAdjacentElement('afterEnd', errorIcon);
+            console.log(`something's missing at ${inputs[i]}`)
+        }
     }
-    })
-};
+}
 
-   
 
-// // checkInputs();
+displayErrorSpans = () => {
+    for(i = 0; i < inputs.length; i++) {
+        if (inputs[i].value === "") {
+            let errorSpan = document.createElement("span");
+            errorSpan.setAttribute("class", "error")
+            errorSpan.innerText = "Don't leave this empty!"
+            
+            inputs[i].insertAdjacentElement('afterEnd', errorSpan);
+            console.log(`something's missing at ${inputs[i]}`)
+        }
+    }
+}
 
-// // define errorIcons
-// const errorIcons = Array.from(document.querySelectorAll("img"));
-// // for each errorIcon...
-// errorIcons.forEach(errorIcon => {
-//     // if the input index is the same as the errorIcon index
-//     let i = inputs.indexOf()
-//     if(inputs[i] === errorIcons[i]) {
-//         // log the index number
-//         console.log(`the error index that matches is ${errorIcons.indexOf(errorIcon)}`);
-//         // change this errorIcon to visible
-//         errorIcons[errorIcons.indexOf(errorIcon)].style.visibility = "visible";
-        
-//     } 
-// })
+checkInputs = () => {
+            displayErrorSpans();
+            displayErrorIcons();  
+}
 
-// //define spans
-// const spans = Array.from(document.querySelectorAll(".error-spans"));
-// // for each span...
-// spans.forEach(span => {
-//     // if the input index is the same as the span index
-//     let i = inputs.indexOf()
-
-//     if(inputs[i] === spans[i]) {
-//         // log the index number
-//         console.log(`the span index that matches is ${spans.indexOf(span)}` );
-//         // change this span to visible
-//         spans[spans.indexOf(span)].style.visibility = "visible";
-//     } 
-// })
 
 const button = document.querySelector("button");
 //add the click event listener to the button
 button.addEventListener("click", function(event) {
-    //run checkInputs when clicked;
+    
+    //prevents the form from reloading the page
+    event.preventDefault();
     console.log("submit button clicked")
+    //run checkInputs when clicked;
     checkInputs();
 
+    //change button text so people know it worked
+    button.innerText = "THANK YOU!"
+
 })
+
+let form = document.querySelector("form");
+form.reset();

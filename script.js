@@ -48,7 +48,9 @@ checkInputs = () => {
                     // change this errorIcon to visible
                     errorIcons[errorIcons.indexOf(errorIcon)].style.visibility = "visible";
                     
-                } 
+                } else {
+                    errorIcon.style.visibility = "hidden"
+                }
             })
 
             // for each span...
@@ -59,8 +61,16 @@ checkInputs = () => {
                     console.log(`the span index that matches is ${spans.indexOf(span)}` );
                     // change this span to visible
                     spans[spans.indexOf(span)].style.visibility = "visible";
-                } 
+                } else {
+                    span.style.visibility = "hidden"
+                }
             })
+        }
+
+        else {
+        input.style.border = "1px solid hsl(246, 25%, 77%)";
+        input.style.color = "hsl(248, 32%, 49%)";
+        
         }
     })
 

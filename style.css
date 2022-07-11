@@ -101,32 +101,38 @@ body {
     outline: transparent;
 }
 
-.cta-form form label input:invalid {
-    /* trigger with validation script */
+/* .cta-form form label input:invalid {
+    trigger with validation script
     border: 2px solid hsl(0, 100%, 74%);
     color:hsl(0, 100%, 74%);
     
-}
+} */
 
-.cta-form form label input:focus.invalid {
+/* .cta-form form label input:focus.invalid {
     outline: none;
-}
+} */
 
 /* error icon  */
-.cta-form form label img.error {
+.cta-form form label img {
     /* border: 1px solid red; */
+    visibility: hidden;
+}
+
+.cta-form form label img.error {
+    visibility: visible;
     float: right;
     position: relative;
     bottom: 50px;
     right: 26px;
-    visibility: hidden;
-
-    /* trigger with validation script */
-    /* visibility: visible; */
 }
 
 /* span with error message */
-.cta-form form label span {
+.cta-form form label span{
+    visibility: hidden;
+
+}
+.cta-form form label span.error{
+    visibility: visible;
     color:hsl(0, 100%, 74%);
     margin: 0;
     float: right;
@@ -135,10 +141,6 @@ body {
     left: 22px;
     font-style: italic;
     font-size: 0.75em;
-    visibility: hidden;
-
-    /* trigger with validation script */
-    /* visibility: visible; */
 
 }
 
