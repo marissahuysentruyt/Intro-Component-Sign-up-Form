@@ -25,6 +25,11 @@ displayErrorIcons = () => {
             
             inputs[i].insertAdjacentElement('afterEnd', errorIcon);
             console.log(`something's missing at ${inputs[i]}`)
+        } else {
+            inputs[i].style.color = "hsl(248, 32%, 49%)";
+            inputs[i].style.border = "1px solid hsl(246, 25%, 77%);";
+            // errorSpan.classList.remove("error")
+            console.log("input is good")
         }
     }
 }
@@ -32,8 +37,9 @@ displayErrorIcons = () => {
 
 displayErrorSpans = () => {
     for(i = 0; i < inputs.length; i++) {
+        let errorSpan = document.createElement("span");
+
         if (inputs[i].value === "") {
-            let errorSpan = document.createElement("span");
             errorSpan.setAttribute("class", "error")
             errorSpan.innerText = "Don't leave this empty!"
             
@@ -41,6 +47,11 @@ displayErrorSpans = () => {
             inputs[i].style.color = "hsl(0, 100%, 74%)";
             inputs[i].style.border = "2px solid hsl(0, 100%, 74%)";
             console.log(`something's missing at ${inputs[i]}`)
+        } else {
+            inputs[i].style.color = "hsl(248, 32%, 49%)";
+            inputs[i].style.border = "1px solid hsl(246, 25%, 77%);";
+            // errorSpan.classList.remove("error")
+            console.log("input is good")
         }
     }
 }
@@ -48,6 +59,7 @@ displayErrorSpans = () => {
 checkInputs = () => {
             displayErrorSpans();
             displayErrorIcons();  
+    
 }
 
 
