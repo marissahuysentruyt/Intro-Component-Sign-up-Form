@@ -7,10 +7,14 @@
 // GENERICS
 
 // ELEMENTS
-@use './app/app.component.scss';
+@use './scss/elements/html';
+@use './scss/elements/body';
+
+// LAYOUT/OBJECTS
 
 // COMPONENTS
-@use './app/footer/footer.component.scss';
+@use './scss/components/footer.component.scss';
+@use './scss/components/hero.component.scss';
 
 // VENDORS
 

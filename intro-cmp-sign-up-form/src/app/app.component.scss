@@ -1,52 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
-* {
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
-}
-
-html {
-    font-size: 16px;
-  }
-  
-body {
-margin: 0;
-}
-
-body {
-    background: hsl(0, 100%, 74%),
-                url("./images/bg-intro-desktop.png");
-    background-repeat: repeat-y;
-    background-position: center;
-    background-size: cover;
-    padding: 7.5%;
-}
 
 .body-container {
     display: flex;
     flex-direction: row;
     /* border: 1px solid black; */
-}
-
-.body-container .hero {
-    /* border: 1px solid red; */
-    color: white;
-    padding: 2em;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    flex-basis: 50%;
-}
-
-.body-container .hero h1 {
-    font-size: 3em;
-    margin: 0;
-    padding: 0;
-}
-
-.body-container .hero p {
-    /* border: 1px solid red; */
-    font-size: 16px;
 }
 
 .body-container .cta-form {
@@ -223,20 +180,4 @@ button:hover {
         /* border: 1px solid black; */
         padding: 3em 1.5em;
     }
-}
-
-/*phone*/
-@media only screen and (max-width: 375px) {
-    .body-container {
-        margin: 3em 0 0 0;
-    }
-    .body-container .hero {
-        padding: 0 0 3em 0;
-        /* border: 1px solid black; */
-    }
-    .body-container .hero h1 {
-        font-size: 1.5em;
-    }
-    
-
 }
