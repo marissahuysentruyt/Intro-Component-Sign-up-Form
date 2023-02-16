@@ -1,0 +1,65 @@
+<main class="body-container">
+
+  <!-- flexbox with h1 & p -->
+  <section class="hero">
+    <h1>
+      Learn to code by watching others changed
+    </h1>
+
+    <p>
+      See how experienced developers solve problems in real-time. Watching scripted tutorials is great, 
+      but understanding how developers think is invaluable. 
+    </p>
+  </section>
+
+  <section class="cta-form">
+    <div class="cta">
+      <span>Try it free 7 days</span> then $20/mo. thereafter
+    </div>
+
+    <!-- action is where the information is getting sent to, so where would this go? script.js? -->
+    <form action="#" method="post">
+      <label for="firstname">
+        <!-- min length vs max length required?-->
+        <input type="text"  placeholder="First Name" id="input-firstname">
+        <!-- <img src="images/icon-error.svg" alt="Error!" id="first-img"> -->
+        <!-- <span id="first-span">First Name cannot be empty</span> -->
+      </label>
+      <label for="lastname">
+        <input type="text"  placeholder="Last Name" id="input-lastname">
+        <!-- <img src="images/icon-error.svg" alt="Error!" id="second-img"> -->
+        <!-- <span id="second-span">Last Name cannot be empty</span> -->
+      </label>
+      <label for="email">
+        <input type="email" placeholder="Email Address" id="input-email">
+        <!-- <img src="images/icon-error.svg" alt="Error!" id="third-img"> -->
+        <!-- <span id="third-span">Looks like this is not an email</span> -->
+      </label>
+      <label for="Password">
+        <input type="password"  placeholder="Password" id="input-password">
+        <!-- <img src="images/icon-error.svg" alt="Error!" id="fourth-img"> -->
+        <!-- <span id="fourth-span">Password cannot be empty</span> -->
+      </label>
+
+      <button type="button">Claim Your Free Trial</button>
+
+      <!-- tiny terms & conditions text -->
+    <div class="terms">
+      By clicking the button, you are agreeing to our <span class="span-terms"><a href="#">Terms and Services</a></span>
+    </div>
+
+    </form>
+  </section>
+
+</main>
+
+
+<footer>
+  <p class="time-estimates">Time Estimated: 8:00. &nbsp; Time Completed: 12:11</p>
+  <p class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://www.marissahuysentruyt.com/" target="blank">Marissa Huysentruyt</a>.
+  </p>
+</footer>
+
+<router-outlet></router-outlet>
