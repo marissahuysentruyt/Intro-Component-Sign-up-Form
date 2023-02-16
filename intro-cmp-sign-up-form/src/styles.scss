@@ -1,10 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
 
-html {
-  font-size: 16px;
-  border: 1px solid red;
-}
+// SETTINGS
 
-body {
-  margin: 0;
-}
+// TOOLS
+
+// GENERICS
+
+// ELEMENTS
+@use './app/app.component.scss';
+
+// COMPONENTS
+@use './app/footer/footer.component.scss';
+
+// VENDORS
+
+// UTILITIES
+
