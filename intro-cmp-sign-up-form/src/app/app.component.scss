@@ -1,183 +1,25 @@
+/* You can add global styles to this file, and also import other style files */
 
+// SETTINGS
 
-.body-container {
-    display: flex;
-    flex-direction: row;
-    /* border: 1px solid black; */
-}
+// TOOLS
 
-.body-container .cta-form {
-    /* border: 1px solid red; */
-    color: white;
-    font-weight: 400;
-    padding: 0;
-    height: auto;
-    /* width: 100%; */
-    flex-basis: 50%;
+// GENERICS
 
-}
+// ELEMENTS
+@use '../scss/elements/html';
+@use '../scss/elements/body';
 
-.cta-form .cta {
-    /* border: 1px solid red; */
-    font-size: 16px;
-    background-color: hsl(248, 32%, 49%);
-    border-radius: 12px;
-    padding: 1.5em;
-    text-align: center;
-    box-shadow: 0 8px 1px 0px rgba(0, 0, 0, 0.16);
-    margin-bottom: 1.5em;
-}
+// LAYOUT/OBJECTS
+@use '../scss/layout/grid-container.component';
+@use '../scss/layout/call-to-action.component.scss';
 
-.cta-form .cta span {
-    font-weight: 700;
-    letter-spacing: 0.06em;
-}
+// COMPONENTS
+@use '../scss/components/footer.component.scss';
+@use '../scss/components/hero.component.scss';
+@use '../scss/components/trial-banner.component'
 
-.cta-form form {
-    /* border: 1px solid black; */
-    /* height: auto; */
-    background-color: #fff;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 3em;
-    flex-basis: 100%;
-    border-radius: 12px;
-    box-shadow: 0 8px 1px 0px rgba(0, 0, 0, 0.16);
+// VENDORS
 
-}
-.cta-form form label {
-    width: 100%;
-    /* border: 1px solid red; */
-}
+// UTILITIES
 
-.cta-form form label input {
-    height: 2.25em;
-    border-radius: 6px;
-    margin-bottom: 1em;
-    border: 1px solid hsl(246, 25%, 77%);
-    padding: 1.75em;
-    width: 100%;
-} 
-
-.cta-form form input:focus {
-    border: 1px solid hsl(248, 32%, 49%);
-    caret-color: hsl(248, 32%, 49%);
-    outline: transparent;
-}
-
-/* .cta-form form label input:invalid {
-    trigger with validation script
-    border: 2px solid hsl(0, 100%, 74%);
-    color:hsl(0, 100%, 74%);
-    
-} */
-
-/* .cta-form form label input:focus.invalid {
-    outline: none;
-} */
-
-/* error icon  */
-.cta-form form label img {
-    /* border: 1px solid red; */
-    visibility: hidden;
-}
-
-.cta-form form label img.error {
-    visibility: visible;
-    float: right;
-    position: relative;
-    bottom: 50px;
-    right: 26px;
-}
-
-/* span with error message */
-.cta-form form label span{
-    visibility: hidden;
-
-}
-.cta-form form label span.error{
-    visibility: visible;
-    color:hsl(0, 100%, 74%);
-    margin: 0;
-    float: right;
-    position: relative;
-    bottom: 12px;
-    left: 22px;
-    font-style: italic;
-    font-size: 0.75em;
-
-}
-
-button {
-    background-color: hsl(154, 59%, 51%);
-    width: 100%;
-    padding: 1.5em;
-    height: 2.25em;
-    border-radius: 6px;
-    border: 1px solid hsl(153, 49%, 47%);
-    margin-bottom: 2em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-transform: uppercase;
-    color: #fff;
-    /* border: transparent; */
-    box-shadow: 0 -2px 0px 0px inset hsl(153, 49%, 47%);
-    transition: all ease-in-out 200ms;
-    padding: 1.75em;
-
-}
-
-button:hover {
-    background-color: rgba(56, 204, 140, 0.6);
-    border: 1px solid rgba(56, 204, 140, 0.8);
-    box-shadow: 0 -2px 0px 0px inset rgba(56, 204, 140, 0.7);;
-}
-
-.terms {
-    /* border: 1px solid red; */
-    color: hsl(246, 25%, 77%);
-    font-size: 0.75em;
-}
-
-.terms a {
-    text-decoration: none;
-    color: hsl(0, 100%, 74%);
-    transition: all ease-in-out 200ms;
-}
-
-.terms a:hover {
-    color: hsl(248, 32%, 49%);
-}
-
-/*tablet*/
-@media only screen and (max-width: 768px) {
-    .body-container {
-        flex-direction: column;
-        /* border: 1px solid black; */
-    }
-    .body-container .hero {
-        /* border: 1px solid red; */
-        text-align: center;
-    }
-    .body-container .hero h1 {
-        font-size: 2em;
-    }
-    .terms {
-        /* border: 1px solid red; */
-        text-align: center;
-    }
-
-}
-
-/*break point for padding around content & form fields*/
-@media only screen and (max-width: 482px) {
-    body {
-        padding: 5%;
-    }
-    .cta-form form {
-        /* border: 1px solid black; */
-        padding: 3em 1.5em;
-    }
-}
