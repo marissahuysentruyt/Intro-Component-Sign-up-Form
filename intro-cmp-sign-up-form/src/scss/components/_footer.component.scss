@@ -1,19 +1,23 @@
 .footnotes {
+  margin-top: 2rem; // 32px/16
+
   &__time-estimates {
     font-size: 0.875rem; // 14px/16
-    text-align: center; 
-    margin: none;
-    padding: none;
-    list-style-type: none;
-
+    list-style: none;
+    width: 100%;
+    padding-inline-start: 0px;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    
     .time-estimates__item {
       line-height: 1.4;
+      text-align: center; 
     }
   }
 
   &__attribution {
     font-size: 0.875rem; 
-
+    margin: 0;
     text-align: center; 
 
     a {
@@ -24,6 +28,11 @@
 
       &:hover {
         text-decoration: underline;
+      }
+
+      &:focus-within {
+        outline: 1px solid hsl(228, 45%, 44%);
+        border-radius: 0.25rem; // 4px/16
       }
     }
   }
