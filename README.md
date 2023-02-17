@@ -1,6 +1,6 @@
 # Frontend Mentor - Intro component with sign up form
 
-![Design preview for the Intro component with sign up form coding challenge](./design/desktop-preview.jpg)
+![Design preview for the Intro component with sign up form coding challenge](intro-cmp-sign-up-form/design/desktop-design.jpg)
 
 This is a solution to the [Intro component with sign up form challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/intro-component-with-signup-form-5cf91bd49edda32581d28fd1). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
 
@@ -19,11 +19,11 @@ This is a solution to the [Intro component with sign up form challenge on Fronte
   - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
 - [Author](#author)
-## Welcome 👋
-
-This is a fairly typical looking sign-up form. I built this in Angular to continue honing my skills in that framework, using `FormBuilder` and `Reactive Forms`. 
 
 **To do this challenge, you need a basic understanding of HTML, CSS and JavaScript.**
+## Welcome 👋
+
+This is a fairly typical looking sign-up form. I built this in Angular to continue honing my skills in that framework, using `FormBuilder`, `Validators`, and `Reactive Forms`. For styles, I used SCSS. 
 
 ## The challenge
 
@@ -36,6 +36,8 @@ Users should be able to:
 - Receive an error message when the `form` is submitted if:
   - Any `input` field is empty. The message for this error should say *"[Field Name] cannot be empty"*
   - The email address is not formatted correctly (i.e. a correct email address should have this structure: `name@host.tld`). The message for this error should say *"Looks like this is not an email"*
+
+**Note: I elected to make the submit button default to disabled. This way, users cannot submit a form without validated inputs.**
 
 ## Where to find everything
 
@@ -81,15 +83,35 @@ I have built this project before, but with plain HTML, CSS & JavaScript. This ti
 ### Built with
 
 - Semantic HTML5 markup
-- CSS custom properties
 - SCSS
+- BEM naming convention
 - Mobile-first workflow
 - [Angular](https://angular.io/)
 <!-- - [React](https://reactjs.org/) - JS library -->
 
 ### What I learned
 
+#### _Netlify & Angular settings_
+
+Because I started a new Angular project within an existing repo, I needed to make sure I indicated that in the Netlify deploy settings. Netlify had to find the Angular directory first (`intro-cmp-sign-up-form`) _before_ running the build command. All of those deploy settings also had to match what was in my `netlify.toml` file under `build`.
+
+I am not using [`Angular Universal`](https://angular.io/guide/universal) or [`Scully`](https://scully.io/) to pre-render this project, so instead I used a `_redirects` file. The `_redirects` file has to be added to the `angular.json` so that Netlify knows to enable Angular routing and page refresh functionality. 
+
+#### _Angular Reactive Forms_
+
+`formControlName` was missing from my `input`s for quite some time, causing my form to come back as undefined, although validated. That attribute connects the HTML to the named form control within the TS file. 
+
+#### _Ternary Text_
+
+Within the submit button, I decided to use a ternary operator, checking if `formSubmitted` was true, and displaying the button text accordingly. I thought this was also a good way to confirm to users that their data sent. 🎉
+````
+  <button type="submit" [disabled]="!signUpForm.valid">
+    {{formSubmitted ? "Submitted!" : "Claim Your Free Trial"}}
+  </button>
+````
 ### Continued development
+
+I am having issues with the secondary `*ngIf` message I'd like to display when passwords are either too short or too long. I have the proper `minLength` and `maxLength` validators, but I struggled to get the actual error messages to display. 
 
 ### Useful resources
 
