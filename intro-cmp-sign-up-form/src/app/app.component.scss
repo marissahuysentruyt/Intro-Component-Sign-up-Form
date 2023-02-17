@@ -17,9 +17,9 @@
 // COMPONENTS
 @use '../scss/components/footer.component.scss';
 @use '../scss/components/hero.component.scss';
-@use '../scss/components/trial-banner.component'
+@use '../scss/components/trial-banner.component';
 
 // VENDORS
 
 // UTILITIES
-
+@use '../scss/utilities/bold';
