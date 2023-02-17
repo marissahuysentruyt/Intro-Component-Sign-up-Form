@@ -1,7 +1,7 @@
 body {
   margin: 0;
   background: hsl(0, 100%, 74%)
-                url('../../app/images/bg-intro-mobile.png');
+                url('../../assets/bg-intro-mobile.png');
   background-repeat: repeat-y;
   background-position: center;
   background-size: cover;
@@ -10,7 +10,7 @@ body {
   @media (min-width: 48rem) {
     padding: 2rem;
     background: hsl(0, 100%, 74%)
-                url('../../app/images/bg-intro-desktop.png');
+                url('../../assets/bg-intro-desktop.png');
   }
 
 }
