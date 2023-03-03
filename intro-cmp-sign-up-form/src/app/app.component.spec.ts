@@ -1,15 +1,26 @@
 import { TestBed } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { Component } from '@angular/core';
+import { By } from '@angular/platform-browser';
+@Component({
+  selector: 'hero', template: ''
+})
+export class HeroComponent {}
+
+@Component({
+  selector: 'grid-container', template: ''
+})
+export class GridContainerComponent {}
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
       ],
       declarations: [
-        AppComponent
+        AppComponent, 
+        GridContainerComponent, 
+        HeroComponent
       ],
     }).compileComponents();
   });
@@ -20,16 +31,14 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'intro-cmp-sign-up-form'`, () => {
+  it(`should have component title 'intro-cmp-sign-up-form'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
     expect(app.title).toEqual('intro-cmp-sign-up-form');
   });
-
-  it('should render title', () => {
+  it('should have a footer with a footnotes class name', () => {
     const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('intro-cmp-sign-up-form app is running!');
-  });
+    const footer = fixture.debugElement.query(By.css('.footnotes')).nativeElement;
+    expect(footer).not.toBeNull();
+  })
 });

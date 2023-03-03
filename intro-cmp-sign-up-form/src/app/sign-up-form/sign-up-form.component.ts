@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'sign-up-form',
   templateUrl: './sign-up-form.component.html',
-  styleUrls: ['../../scss/components/_sign-up-form.component.scss']
+  styleUrls: ['../../scss/components/_sign-up-form.component.scss'],
 })
 export class SignUpFormComponent implements OnInit {
   signUpForm!: FormGroup;

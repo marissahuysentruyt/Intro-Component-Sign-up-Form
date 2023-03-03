@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
 })
 export class FooterComponent {
   timeEstimate = '8:00'
-  timeCompleted = '6:00'
+  timeCompleted = '12:11'
 }
