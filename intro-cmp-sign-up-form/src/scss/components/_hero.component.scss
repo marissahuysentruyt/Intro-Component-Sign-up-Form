@@ -1,0 +1,31 @@
+.hero {
+  color: white;
+  padding: 0; // 20px/16
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+
+  &__heading {
+    font-size: 1.5rem; // 24px/16
+    margin: 0;
+    padding: 0;
+    line-height: 1.4;
+
+    // 768px/16
+    @media (min-width: 48rem) {
+      font-size: 3rem; // 48px/16
+    }
+  }
+
+  &__subheading {
+    font-size: 1rem; // 16px/16
+    font-weight: 400;
+    line-height: 1.4;
+
+      // 768px/16 
+      @media (min-width: 48rem) {
+        font-size: 1.25rem; // 20px/16
+    }
+  }
+}

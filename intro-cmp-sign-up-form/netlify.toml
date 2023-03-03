@@ -1,0 +1,9 @@
+[[redirects]]
+  from = "/"
+  to = "index.html"
+  status = 200
+
+  [build]
+    base = "intro-cmp-sign-up-form"
+    command = "ng build intro-cmp-sign-up-form"
+    publish = "dist/intro-cmp-sign-up-form"

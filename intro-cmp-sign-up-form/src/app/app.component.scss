@@ -1,0 +1,26 @@
+/* You can add global styles to this file, and also import other style files */
+
+// SETTINGS
+
+// TOOLS
+
+// GENERICS
+
+// ELEMENTS
+@use '../scss/elements/html';
+@use '../scss/elements/body';
+
+// LAYOUT/OBJECTS
+@use '../scss/layout/grid-container.component';
+@use '../scss/layout/call-to-action.component.scss';
+
+// COMPONENTS
+@use '../scss/components/footer.component.scss';
+@use '../scss/components/hero.component.scss';
+@use '../scss/components/trial-banner.component';
+@use '../scss/components/terms.component';
+
+// VENDORS
+
+// UTILITIES
+@use '../scss/utilities/bold';

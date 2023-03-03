@@ -1,0 +1,49 @@
+ <section class="form">
+  <div class="form__container">
+    <form action="#" method="post"
+      [formGroup]="signUpForm"
+      (ngSubmit)="onSubmit(signUpForm.value)"
+    >
+      <label for="firstName" name="firstName">
+        <input required name="firstName" type="text"  placeholder="First Name" id="firstName" formControlName="firstName">
+        <div class="error" *ngIf="signUpForm.get('firstName')!.hasError('pattern') && (signUpForm.get('firstName')!.dirty || signUpForm.get('firstName')!.touched)">
+          <img src="../../assets/icon-error.svg" alt="Error!"> 
+          <span>Invalid character(s)</span>
+        </div> 
+      </label>
+
+      <label for="lastName" name="lastName">
+        <input required name="lastName" type="text"  placeholder="Last Name" id="lastName" formControlName="lastName">
+        <div class="error" *ngIf="signUpForm.get('lastName')!.hasError('pattern') && (signUpForm.get('lastName')!.dirty || signUpForm.get('lastName')!.touched)">
+          <img src="../../assets/icon-error.svg" alt="Error!"> 
+          <span>Invalid character(s)</span>
+        </div> 
+      </label>
+
+      <label for="email" name="email">
+        <input required name="email" type="email" placeholder="Email Address" id="email" formControlName="email">
+        <div class="error" *ngIf="signUpForm.get('email')!.hasError('pattern') && (signUpForm.get('email')!.dirty || signUpForm.get('email')!.touched)">
+          <img src="../../assets/icon-error.svg" alt="Error!"> 
+          <span>Valid email required</span>
+        </div> 
+      </label>
+
+      <label for="password" name="password">
+        <input required name="password" type="password" placeholder="Password" id="password" formControlName="password">
+        <div class="error" *ngIf="signUpForm.get('password')!.touched && signUpForm.get('password')!.pristine">
+          <img src="../../assets/icon-error.svg" alt="Error!"> 
+          <span>Password cannot be empty</span>
+        </div> 
+        <div class="error" *ngIf="(signUpForm.get('password')!.hasError('minLength') || signUpForm.get('password')!.hasError('maxLength')) && (signUpForm.get('password')!.dirty || signUpForm.get('password')!.touched)">
+          <img src="../../assets/icon-error.svg" alt="Error!"> 
+          <span>Password must be between 8 and 20 characters.</span>
+        </div> 
+      </label>
+
+      <button type="submit" [disabled]="!signUpForm.valid">
+        {{formSubmitted ? "Submitted!" : "Claim Your Free Trial"}}
+      </button>
+    </form>
+    <terms></terms>
+  </div>
+ </section>

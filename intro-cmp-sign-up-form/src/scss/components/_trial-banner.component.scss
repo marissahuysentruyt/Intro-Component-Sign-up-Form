@@ -1,0 +1,13 @@
+.cta {
+  
+  &__content {
+    color: #fff;
+    font-size: 1rem; // 16px/16
+    background-color: hsl(248, 32%, 49%);
+    border-radius: 12px;
+    padding: 1.5em;
+    text-align: center;
+    box-shadow: 0 8px 1px 0px rgba(0, 0, 0, 0.16);
+    margin-bottom: 1.5em;
+  }
+}
